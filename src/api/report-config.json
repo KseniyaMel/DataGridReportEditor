@@ -1,0 +1,41 @@
+{
+  "name": "Report",
+  "code": "abs",
+  "columns": [
+    {
+      "dataField": "companyName",
+      "caption": "Company Name",
+      "dataType": "string",
+      "format": "",
+      "alignment": "left"
+    },
+    {
+      "dataField": "city",
+      "caption": "City",
+      "dataType": "string",
+      "format": "",
+      "alignment": "left"
+    },
+    {
+      "dataField": "state",
+      "caption": "State",
+      "dataType": "string",
+      "format": "",
+      "alignment": "left"
+    },
+    {
+      "dataField": "phone",
+      "caption": "Phone",
+      "dataType": "string",
+      "format": "",
+      "alignment": "left"
+    },
+    {
+      "dataField": "fax",
+      "caption": "Fax",
+      "dataType": "string",
+      "format": "",
+      "alignment": "left"
+    }
+  ]
+}
