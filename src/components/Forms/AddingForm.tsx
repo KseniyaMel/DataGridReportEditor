@@ -14,6 +14,7 @@ export default function AddingForm(props: IEditingFormProps) {
     format: "",
     alignment: "right",
   });
+
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
@@ -22,7 +23,6 @@ export default function AddingForm(props: IEditingFormProps) {
       return { ...prev, [e.target.name]: e.target.value };
     });
   };
-  console.log(column);
   return (
     <form
       onSubmit={(e) => {
