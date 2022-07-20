@@ -7,7 +7,8 @@ interface IEditingFormProps {
 
 export default function EditingForm(props: IEditingFormProps) {
   const { defaultValue, onSubmit } = props;
-  const [caption, setCaption] = useState(defaultValue);
+  const [caption, setCaption] = useState<string>(defaultValue);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setCaption(e.target.value);
   };

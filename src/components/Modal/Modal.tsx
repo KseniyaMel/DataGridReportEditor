@@ -1,5 +1,5 @@
-import { ReactNode } from "react";
-import "./Modal.css";
+import { ReactNode } from 'react';
+import './Modal.css';
 
 interface IModalProps {
   isVisible: boolean;
@@ -10,6 +10,7 @@ interface IModalProps {
 
 export default function Modal(props: IModalProps) {
   const { isVisible, title, children, onClose } = props;
+
   return !isVisible ? null : (
     <div className="modal" onClick={onClose}>
       <div className="modal-dialog" onClick={(e) => e.stopPropagation()}>

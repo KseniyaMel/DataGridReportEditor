@@ -7,8 +7,9 @@ import ColumnEditor from './ColumnEditor';
 interface IReportEditorProps extends IUseColumnsRes {}
 
 export default function ReportEditor(props: IReportEditorProps) {
-  const { columns, handleAdd, handleDelete, handleEdite } = props;
-  const [open, setOpen] = useState(false);
+  const { columns, handleAdd, handleDelete, handleEdit } = props;
+  const [open, setOpen] = useState<boolean>(false);
+
   return (
     <>
       <Modal
@@ -31,7 +32,7 @@ export default function ReportEditor(props: IReportEditorProps) {
               key={column.dataField}
               column={column}
               handleDelete={handleDelete}
-              handleEdite={handleEdite}
+              handleEdite={handleEdit}
             />
           );
         })}

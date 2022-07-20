@@ -11,7 +11,7 @@ interface IColumnEditorProps {
 
 export default function ColumnEditor(props: IColumnEditorProps) {
   const { column, handleDelete, handleEdite } = props;
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState<boolean>(false);
 
   return (
     <>
@@ -26,7 +26,6 @@ export default function ColumnEditor(props: IColumnEditorProps) {
             handleEdite(column.caption, newCaption);
             setOpen(false);
           }}
-          //  onSubmit={handleEdite.bind(null, column.caption)}
         />
       </Modal>
       <div className="column-editor">

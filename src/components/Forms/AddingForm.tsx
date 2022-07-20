@@ -18,10 +18,11 @@ export default function AddingForm(props: IEditingFormProps) {
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
-    setColumn((prev) => {
+    setColumn((prev: IColumns) => {
       return { ...prev, [e.target.name]: e.target.value };
     });
   };
+
   return (
     <form
       onSubmit={(e) => {

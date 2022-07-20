@@ -13,13 +13,6 @@ export const alignmentType = ['right', 'center', 'left'] as const;
 export type DataType = typeof dataType[number];
 export type AlignmentType = typeof alignmentType[number];
 
-// export function isFormatType(name: string): name is DataType {
-//   return (dataType as ReadonlyArray<string>).includes(name);
-// }
-// export function isAlignmentType(name: string): name is AlignmentType {
-//   return (alignmentType as ReadonlyArray<string>).includes(name);
-// }
-
 export interface IColumns {
   dataField: string;
   caption: string;
@@ -30,7 +23,7 @@ export interface IColumns {
 
 export interface IUseColumnsRes {
   columns: IColumns[];
-  handleEdite: (caption: string, newCaption: string) => void;
+  handleEdit: (caption: string, newCaption: string) => void;
   handleDelete: (dataField: string) => void;
   handleAdd: (column: IColumns) => void;
 }
@@ -40,23 +33,27 @@ export default function useColumns(): IUseColumnsRes {
     configure.columns as IColumns[]
   );
 
-  const handleEdite = (caption: string, newCaption: string) => {
-    setColumns((prev) =>
-      prev.map((col) =>
+  const handleEdit = (caption: string, newCaption: string) => {
+    setColumns((prev: IColumns[]) =>
+      prev.map((col: IColumns) =>
         col.caption === caption ? { ...col, caption: newCaption } : col
       )
     );
   };
+
   const handleDelete = (dataField: string) => {
-    setColumns((prev) => prev.filter((col) => col.dataField !== dataField));
+    setColumns((prev: IColumns[]) =>
+      prev.filter((col: IColumns) => col.dataField !== dataField)
+    );
   };
+
   const handleAdd = (column: IColumns) => {
-    setColumns((prev) => [...prev, column]);
+    setColumns((prev: IColumns[]) => [...prev, column]);
   };
 
   return {
     columns,
-    handleEdite,
+    handleEdit,
     handleDelete,
     handleAdd,
   };
