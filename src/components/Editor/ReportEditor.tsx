@@ -1,8 +1,8 @@
-import { useState } from "react";
-import { IUseColumnsRes } from "../../useColumns";
-import AddingForm from "../Forms/AddingForm";
-import Modal from "../Modal/Modal";
-import ColumnEditor from "./ColumnEditor";
+import { useState } from 'react';
+import { IColumns, IUseColumnsRes } from '../../useColumns';
+import AddingForm from '../Forms/AddingForm';
+import Modal from '../Modal/Modal';
+import ColumnEditor from './ColumnEditor';
 
 interface IReportEditorProps extends IUseColumnsRes {}
 
@@ -13,19 +13,22 @@ export default function ReportEditor(props: IReportEditorProps) {
     <>
       <Modal
         isVisible={open}
-        title="добавить колонку"
+        title="Добавить колонку"
         onClose={() => setOpen(false)}
       >
         <AddingForm
-          onSubmit={(newCaption: string) => {
-            return;
+          onSubmit={(column: IColumns) => {
+            handleAdd(column);
+            setOpen(false);
           }}
         />
       </Modal>
-      <div>
+      <div className="report-editor">
+        <h4>Колонки</h4>
         {columns.map((column) => {
           return (
             <ColumnEditor
+              key={column.dataField}
               column={column}
               handleDelete={handleDelete}
               handleEdite={handleEdite}

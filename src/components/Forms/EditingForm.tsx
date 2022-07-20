@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 interface IEditingFormProps {
   defaultValue: string;
@@ -19,7 +19,10 @@ export default function EditingForm(props: IEditingFormProps) {
         onSubmit(caption);
       }}
     >
-      <input type="string" value={caption} onChange={handleChange} />
+      <label>
+        Название:&nbsp;
+        <input type="string" value={caption} onChange={handleChange} />
+      </label>
       <button type="submit">Изменить</button>
     </form>
   );

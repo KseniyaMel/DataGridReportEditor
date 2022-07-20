@@ -1,7 +1,7 @@
-import { useState } from "react";
-import { IColumns } from "../../useColumns";
-import EditingForm from "../Forms/EditingForm";
-import Modal from "../Modal/Modal";
+import { useState } from 'react';
+import { IColumns } from '../../useColumns';
+import EditingForm from '../Forms/EditingForm';
+import Modal from '../Modal/Modal';
 
 interface IColumnEditorProps {
   column: IColumns;
@@ -29,7 +29,7 @@ export default function ColumnEditor(props: IColumnEditorProps) {
           //  onSubmit={handleEdite.bind(null, column.caption)}
         />
       </Modal>
-      <div>
+      <div className="column-editor">
         <h5>{column.caption}</h5>
         <button onClick={() => handleDelete(column.dataField)}>🗑</button>
         <button onClick={() => setOpen(true)}>✏️</button>
